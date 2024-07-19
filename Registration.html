@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chauffeur Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background-image: url("https://edelswiss-limousine.ch/wp-content/uploads/2019/02/chauffeur-service-switzerland-2.jpg");
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+        
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            color: #cda45e;
+            padding: 20px;
+            background-image: url("https://luxury-chauffeur-service.com/wp-content/uploads/2022/10/1381550432-1536x1024.jpg");
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 50%;
+            }
+            
+        }
+             @media(max-width:769px){
+             .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        }
+
+   
+    </style>
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const error = document.getElementById('error');
+
+            if (password !== confirmPassword) {
+                error.textContent = 'Passwords do not match';
+                return false;
+            }
+
+            error.textContent = '';
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Chauffeur Registration</h2>
+        <form action="" id="form" enctype="multipart/form-data"
+>
+            
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="contact">Contact Details</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="experience">Experience as Driver</label>
+            <input type="text" id="experience" name="experience" required>
+
+            <label for="aadhaar">AADHAAR Card</label>
+            <input type="file" id="aadhaar" accept="image/*" name="aadhaar" required>
+
+            <label for="license">Driving License</label>
+            <input type="file" id="license" name="license" accept="image/*" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+            <div id="error" class="error"></div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        var formData = new FormData();
+        var aa = document.getElementById("aadhaar");
+        var dl = document.getElementById("license");
+        
+        aa.onchange=async()=>{
+            const reader = new FileReader();
+            await reader.readAsDataURL(aa.files[0]);
+            await reader.addEventListener("load", () => {
+            formData.append("aadhaar",JSON.stringify(reader.result));
+          })
+        }
+
+        dl.onchange=async()=>{
+            const reader1 = new FileReader();
+            await reader1.readAsDataURL(dl.files[0]);
+            await reader1.addEventListener("load", () => {
+                formData.append("license",JSON.stringify(reader1.result));
+            })
+        }
+        const submit=async()=>{
+            var paramsdata = {
+                name: document.getElementById("name").value,
+                contact: document.getElementById("contact").value,
+                email: document.getElementById("email").value,
+                experience: document.getElementById("experience").value,
+            }
+            for (const key in paramsdata) {
+                formData.append(key, paramsdata[key])
+            }
+            formData.forEach((each)=>console.log(each));
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw1_ChaoNrVQ_GObErN_cJCBwY2o2Yirs2irTgQescM8YIwRWYCnRh0Wr--jkR4UDHi/exec'
+            const form = document.forms['google-sheet']
+                fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+
+            
+        }
+       var form=document.getElementById("form");
+       form.onsubmit=async function(e){
+        e.preventDefault();
+        await submit()
+       }
+    </script>
+</body>
+
+</html>

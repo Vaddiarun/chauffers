@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Request Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            background-image: url("https://luxury-chauffeur-service.com/wp-content/uploads/2022/10/1381550432-1536x1024.jpg");
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1d1c1c; 
+        }
+        .text-coloring{
+    color: rgb(72, 25, 25);
+}
+
+        .container {
+            width: 100%;
+            background-image: url("https://edelswiss-limousine.ch/wp-content/uploads/2019/02/chauffeur-service-switzerland-2.jpg");
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: #cda45e;
+            background-size:0%;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .button-group button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+            color: black;
+            background-color: rgba(248, 246, 240, 0.909);
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, border-bottom 0.3s;
+        }
+
+        .button-group button.active {
+            background-color: transparent;
+            border-bottom: 2px solid #20e73b;
+            color: #fff;
+        }
+
+        .button-group button:hover:not(.active) {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .form-group h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+
+        .alinebutton {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .request-button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .request-button:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+        /* .popup {
+      display: flex;
+      
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      color: white;
+      margin-bottom: 50px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+    } */
+        .popup {
+    position: fixed;
+    width: 75%;
+ background-color:rgb(53, 52, 52);
+  color: rgba(225, 175, 67, 0.833);
+    display: flex;
+    border-radius: 10px;
+    z-index: 10;
+    margin-left:-100px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    top: 20%;
+    align-self: center;
+
+}
+.flexingcardsinsideopoup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    
+}
+.popup-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.btn{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+.alineitems{
+    
+    color: white;
+    margin-top: 5px;
+    border-radius: 20px !important;
+    background-color: rgba(189, 168, 74, 0.909);
+    padding: 10px;
+}
+.text{
+    font-size:  14px;
+    margin: 8px;
+}
+.TEXT-BOX{
+    width: 160px;
+    height: 100px;
+    margin-right: 10px;
+    border: 1px solid rgba(241, 221, 177, 0.731);
+    text-align:start;
+}
+
+@media(max-width:769px){
+    .popup {
+    position: fixed;
+    width: 76%;
+ background-color:rgb(53, 52, 52);
+  color: rgba(225, 175, 67, 0.833);
+    display: flex;
+    border-radius: 10px;
+    z-index: 10;
+    margin-left:-50px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    top: 20%;
+    left: 14%;
+    align-self: center;
+}
+  .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 10px;
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+
+  .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+            margin-left: 0px;
+        }
+         .button-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            width: 80%;
+        }
+
+        .button-group button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+            color: black;
+            background-color: rgba(248, 246, 240, 0.909);
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, border-bottom 0.3s;
+        }
+
+        .button-group button.active {
+            background-color: transparent;
+
+            border-bottom: 2px solid #20e73b;
+        }
+
+        .button-group button:hover:not(.active) {
+            background-color: #007bff;
+            color: #fff;
+        }
+.popup-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.TEXT-BOX{
+    width: 160px;
+    height: 130px;
+    margin-right: 10px;
+    border: 1px solid rgba(241, 221, 177, 0.731);
+    text-align:start;
+}
+
+.text{
+    font-size:  12px;
+    margin: 8px;
+}
+}
+ 
+@media (min-width: 768px) {
+    .popup{
+        width: 50%;
+    }
+       
+}
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+    </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+                 
+    </script>
+</head>
+
+<body>
+    <div class="maincont">
+
+   
+<div class="container">
+
+    <div class="button-group">
+            <button value="oneway" id="one-way-btn" class="active">One Way</button>
+            <button value="round" id="round-trip-btn">Round Trip</button>
+            <button value="outstation" id="outstation-btn">Outstation</button>
+    </div>
+    <form id="form" class="form">
+
+
+        <!-- One Way Form -->
+        <div class="form-group" id="one-way-form">
+            <label for="drop" style="margin-top:10px;    color: #cda45e;;">Name</label>
+            <input type="text" id="name"  placeholder="Enter your name" 
+                name="name">
+                <label for="drop" style="margin-top:10px;    color: #cda45e;;">Number</label>
+                <input type="tel" id="phone" placeholder="Enter 4 letters Number" 
+                    name="phone">
+            <h2 style="   color: #cda45e; margin-bottom: 13px; margin-top: 12px;"  >Choose Location</h2>
+            <label for="pickup"style="   color: #cda45e;;" >Pickup Location</label>
+            <input type="text" id="pickup" placeholder="Enter 4 letters to Search Pickup Location"
+                aria-label="Search Pickup Location" name="chooseloactiononwayform" >
+            <label for="drop" style="margin-top:10px;    color: #cda45e;;">Drop Location</label>
+            <input type="text" id="drop" placeholder="Enter 4 letters to Search Drop Location"
+                aria-label="Search Drop Location" name="choosedroploactiononwayform">
+        </div>
+
+        <!-- Round Trip Form -->
+
+        <div class="form-group no-margin-bottom" id="round-trip-extra">
+            <h2 style="margin-top:10px;color:#cda45e;">Select Package</h2>
+            <select aria-label="Package Hours" id="timing">
+                <option value="" disabled selected>Select Package Hours</option>
+                <option value="2hours">2 Hours</option>
+                <option value="4hours">4 Hours</option>
+                <option value="6hours">6 Hours</option>
+                <option value="8hours">8 Hours</option>
+                <option value="12hours">12 Hours</option>
+            </select>
+        </div>
+
+        <!-- Outstation Form -->
+
+        <div class="form-group hidden" id="outstation-extra">
+            <h2 style="margin-top:10px; color:#cda45e;">Select Trip Type and Estimated Usage</h2>
+            <select aria-label="Trip Type" style="margin-bottom:12px;" id="outs">
+                <option value="" disabled selected>Select Trip Type</option>
+                <option value="round-trip">Round Trip</option>
+                <option value="one-way">One Way Trip</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+                        <label for="date-time" style="margin-top:10px; color:#cda45e;">Select Date & Time</label>
+                        <input type="datetime-local" id="date-time" aria-label="Date and Time">
+        </div>
+
+        <div class="form-group no-margin-bottom">
+            <h2 style="color: #cda45e;" >Car Type</h2>
+            <select aria-label="Car Brand" style="margin-bottom:12px;" id="category">
+                <option value="" disabled selected>Select Company</option>
+                <option value="AUDI">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="BENZ">Merceds Benz</option>
+            </select>
+
+                        <select aria-label="Car Model Type" style="margin-bottom:12px; display: block;" id="AUDI">
+                            <option value="" disabled selected>Select Model</option>
+                            <option value="A5_convertible_Sedan">A5 convertible(Sedan3+1)</option>
+                            <option value="A5_convertible_Sedan">A5 convertible(Sedan3+1)</option>
+            </select>
+                        <select aria-label="Car Model Type" style="margin-bottom:12px; display:none;" id="BENZ">
+                            <option value="" disabled selected>Select Model</option>
+                            <option value="S_class_350_Sedan">S class 350(Sedan3+1)</option>
+                            <option value="E_class_Sedan">E class(Sedan3+1)</option>
+                            <option value="Maybach_S600">Maybach S600</option>
+                            <option value="GLS_350_SUV">GLS 350(SUV6+1)</option>
+                        </select>
+            <select aria-label="Car Model Type" style="margin-bottom:12px; display: none;" id="BMW">
+                                        <option value="" disabled selected>Select Model</option>
+                                        <option value="X5_SUV">X5 (SUV-4+1)</option>
+                                        <option value="BMW_730dI_SUV">BMW 730dI (SUV-4+1)</option>
+            </select>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="protection-plan">
+            <label for="protection-plan">Get Vehicle damage protection plan for your car for ₹15 + GST. T&C
+                apply</label>
+        </div>
+
+        <div class="alinebutton">
+            <button class="request-button" id="submit" type="submit">Book Car</button>
+            <span id="Error" class="error" style="color: red;font-size: 14px;"></span>
+        </div>
+    </form>
+
+    </div>
+        <div id="popup" style="display:none;" class="popup">
+            
+            <button class="close" id="close">&times;</button>
+        <div class="popup-items">
+            <p id="base">:10000</p>
+            <p id="before6" style="display: none;">:10000</p>
+            <p id="tax">:10000</p>
+            <p id="total">:10000</p>
+            
+        </div>
+        <div class="flexingcardsinsideopoup">
+            <div class="TEXT-BOX">
+                <p id="paraelement" class="text">If the trip extends beyond 1 Hrs, extra charges as extra min applicable</p>
+            </div><div class="TEXT-BOX" >
+                <p id="paraelement2" class="text">If distance between trip start and end location is beyond 15 Kms, ₹7.50 per extra km applicable.</p>
+            </div><div class="TEXT-BOX">
+                <p id="paraelement3" class="text">Night Charge ₹200 on drives ending between 10:00PM & 05:59AM</p>
+            </div>
+        </div>
+        
+           <div class="btn" >
+            <button class="alineitems" onclick="booknow()">Book Now</button>
+           </div>
+        </div>
+        </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+
+     </script>   
+    <script>
+        document.getElementById('one-way-btn').addEventListener('click', function () {
+                document.getElementById('outstation-extra').classList.add('hidden');
+                setActiveButton(this);
+                console.log("yes")
+            });
+
+            document.getElementById('round-trip-btn').addEventListener('click', function () {
+                document.getElementById('outstation-extra').classList.add('hidden');
+                setActiveButton(this);
+                console.log("Yes")
+            });
+
+            document.getElementById('outstation-btn').addEventListener('click', function () {
+                document.getElementById('outstation-extra').classList.remove('hidden');
+                setActiveButton(this);
+            });
+           var selectedType="oneway";
+            function setActiveButton(button) {
+                const buttons = document.querySelectorAll('.button-group button');
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                selectedType=button.value;
+                console.log(selectedType)
+            }
+
+            // Initialize the form with "One Way" selected
+  
+
+        var pricesObject;
+        var carModel;
+        var amount;
+        const submit = async () => {
+            var pickup = document.getElementById('pickup').value
+            const drop = document.getElementById('drop').value
+                            //   const email = document.getElementById('email').value
+                            //   const message = document.getElementById('message').value
+            const Pickupdateandtime = document.getElementById('date-time').value
+            const Error = document.getElementById('Error')
+            const packageTime=document.getElementById("timing").value
+                            // pickup == "" ||
+            const carBrand=document.getElementById("category").value;
+            if (carBrand==="AUDI"){
+                carModel=document.getElementById("AUDI").value;
+            }else if(carBrand==="BENZ"){
+                carModel=document.getElementById("BENZ").value;
+            }else{
+                 carModel=document.getElementById("BMW").value;
+            }
+
+            // if (drop == "" || Pickupdateandtime == null || pickup == "" || carBrand===null || carModel===null || packageTime===null) {
+
+            //                     // alert("Please fill all the fields")
+            //     // Error.innerText = "Please fill all the fields"
+            // } 
+            // else {
+                const namec = /^[A-Za-z - .,]+$/
+                // const emailc = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+                // if (!namec.test(pickup)) {
+                //     console.log('pickup');
+                //     Error.innerText = "Please add a valid Pickup place"
+                //     return
+                // }
+                // if (!namec.test(drop)) {
+                //     console.log('drop');
+                //     Error.innerText = "Please add a valid Drop Place"
+                //     return
+                // }
+
+                pricesObject={
+                        S_class_350_Sedan:{
+                            Basic: 22899,
+                            PerHour: 2200,
+                            PerKm: 220,
+                            chauffer:{
+                              Before_6am:500,
+                              After_10pm:1000
+                            },
+                            out_station:{
+                                per_day_KM:300,
+                                per_KM:220,
+                                chargesAfter6am_10Pm: 2000
+                            }
+
+                        }
+                        ,E_class_Sedan:{
+                             Basic:14400,
+                            PerHour:1000,
+                            PerKm: 120,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1000
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 110,
+                                chargesAfter6am_10Pm:2000
+                            },},
+                            Maybach_S600:{
+                                 Basic:60000,
+                                PerHour:3600,
+                                PerKm: 510,
+                                chauffer: {
+                                    Before_6am: 500,
+                                    After_10pm: 1000
+    
+                                },
+                                out_station: {
+                                    per_day_KM: 300,
+                                    per_KM: 510,
+                                    chargesAfter6am_10Pm: 2000
+
+                            },},
+                            GLS_350_SUV:{
+                                 Basic:42000,
+                                PerHour: 2200,
+                                PerKm: 220,
+                                chauffer: {
+                                    Before_6am: 500,
+                                    After_10pm: 1000,
+                                   
+                                },
+                                out_station: {
+                                    per_day_KM: 300,
+                                    per_KM: 220,
+                                    chargesAfter6am_10Pm: 2000
+
+                            }},
+                A5_convertible_Sedan:{
+                    Basic:60000,
+                    PerHour: 4800,
+                    PerKm: 480,
+                    chauffer: {
+                        Before_6am: 3000,
+                        After_10pm: 3000,
+
+                    },
+                    out_station: {
+                        per_day_KM: 300,
+                        per_KM: 600,
+                        chargesAfter6am_10Pm: 3000
+
+                }
+            },    
+                X5_SUV:{
+                     Basic:40800,
+                    PerHour:2200,
+                    PerKm: 220,
+                    chauffer: {
+                        Before_6am: 500,
+                        After_10pm: 1000,
+
+                    },
+                    out_station: {
+                        per_day_KM: 300,
+                        per_KM: 220,
+                        chargesAfter6am_10Pm: 2000
+
+                    },
+                },
+                BMW_730dI_SUV:{
+                         Basic: 22800,
+                        PerHour: 1900,
+                        PerKm: 180,
+                        chauffer: {
+                            Before_6am: 500,
+                            After_10pm: 1500,
+
+                        },
+                        out_station: {
+                            per_day_KM: 300,
+                            per_KM: 180,
+                            chargesAfter6am_10Pm: 2000
+
+                        },
+                    }
+                }
+                
+                const base=document.getElementById("base")
+                // const extra1 = document.getElementById("extra1")
+                // const extrakm = document.getElementById("extrakm")
+                // const after10 = document.getElementById("after10")
+                const before6 = document.getElementById("before6")
+                const popup=document.getElementById("popup")
+                const paraelement=document.getElementById("paraelement")
+                const paraelement2=document.getElementById("paraelement2")
+                const paraelement3=document.getElementById("paraelement3")
+                const tax=document.getElementById("tax")
+                console.log(carModel)
+
+                // // after10.textContent ="After 10Pm Charges :"+ pricesObject[carModel].chauffer.After_10pm;
+
+                let base_amount = pricesObject[carModel].Basic;
+                const date_time = document.getElementById("date-time").value;
+                const time = date_time.split("T")
+                const hour = parseInt(time[1].split(":")[0]);
+                const total=document.getElementById("total")
+                if (selectedType === "round") {
+                base_amount=base_amount*2;
+                }else if(selectedType==="outstation"){
+                    const item=document.getElementById("outs").value;
+                    if (item==="round-trip"){
+                        base_amount=base_amount*2;
+                    }
+                }
+                if (hour < 6) {
+                base_amount = base_amount + pricesObject[carModel].chauffer.Before_6am;
+                                before6.textContent = "Before 6am Charges :" + pricesObject[carModel].chauffer.Before_6am;
+                before6.style.display = "block";
+                }
+                amount=base_amount+base_amount*(18/100);
+                base.textContent = "Base Price : " + base_amount;
+                tax.textContent="Tax&GST : "+base_amount*(18/100);
+                total.textContent="Total Payable : "+(base_amount+base_amount*(18/100));
+                paraelement.textContent="If the trip extends beyond 1 Hrs, extra charges as:"+ pricesObject[carModel].PerHour+" extra min applicable"
+                paraelement2.textContent="If distance between trip start and end location is beyond 15 Kms :"+ pricesObject[carModel].PerKm + "per extra km applicable."
+                paraelement3.textContent=" Booking before  6pm RS:" +pricesObject[carModel].chauffer.Before_6am +"and"+"Booking before after 10Pm Rs:"+pricesObject[carModel].chauffer.After_10pm
+                popup.style.display="block";
+            }
+        // }
+        const booknow=async()=>{
+             var response = await fetch(`./order.php?amount=${amount*100}`)
+            var orderId = await response.text()
+            var rzp1 = new Razorpay({
+                key: "rzp_live_yxuBa3QpFAHrFL",
+                amount: amount*100,
+                orderId: orderId,
+                currency: "INR",
+
+                handler: function (res) {
+                    console.log(res);
+                    var params = {
+                        razorpayPaymentId: res.razorpay_payment_id,
+                        name:document.getElementById("name").value,
+                        phone:document.getElementById("phone").value,
+                        drop: document.getElementById("drop").value,
+                        pdate: document.getElementById("pdate").value,
+                        ptime: document.getElementById("ptime").value,
+                        pickup : document.getElementById("pickup").value,
+                        amount: amount,
+                    }
+
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxB5H4gJleFcJ45ES9c9uzovlaJZ0-GV32qNDRD2lckW5oqixKl2C5lHsjEY5o3GnabLA/exec'
+                    const form = document.forms['google-sheet']
+                    const formData = new FormData();
+                    Object.keys(params).forEach(key => formData.append(key, params[key]))
+                    fetch(scriptURL, { method: 'POST', body: formData })
+                        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                        .catch(error => console.error('Error!', error.message))
+                },
+                prefill: {
+                    email: "chinarayudubellary8@gmail.com",
+                    contact: "8688261165"
+                }
+            })
+            rzp1.open();
+        }
+
+        function initAutocomplete() {
+                                const autocomplete1 = new google.maps.places.Autocomplete(
+                                    document.getElementById('pickup'),
+                                    { types: ['geocode'], componentRestrictions: { country: "in" }, fields: ["geometry"] }
+                                );
+
+                                console.log("yes")
+
+                                const autocomplete2 = new google.maps.places.Autocomplete(
+                                    document.getElementById('drop'),
+                                    { types: ['geocode'], componentRestrictions: { country: "in" }, fields: ["geometry"] }
+                                );
+
+                                // Listen for the event when a place is selected.
+                                autocomplete1.addListener('place_changed', function () {
+                                    const place = autocomplete1.getPlace();
+                                    console.log(place);
+                                });
+
+                                autocomplete2.addListener('place_changed', function () {
+                                    const place = autocomplete2.getPlace();
+                                    console.log(place);
+                                });
+
+                            }
+
+               
+        const trip = document.getElementById("submit");
+        trip.onclick = function (e) {
+            e.preventDefault();
+            submit();
+        }
+        window.onload = function () {
+            initAutocomplete();
+        };
+       
+
+        const category=document.getElementById("category");
+        category.onchange=function(e){
+            console.log(e.target.value)
+            if (e.target.value==="BMW"){
+                document.getElementById("BMW").style.display = "block";
+                document.getElementById("BENZ").style.display = "none";
+                document.getElementById("AUDI").style.display="none";
+            }else if(e.target.value==="AUDI"){
+                document.getElementById("BMW").style.display = "none";
+                document.getElementById("BENZ").style.display = "none";
+                document.getElementById("AUDI").style.display = "block";
+            }else{
+                document.getElementById("BMW").style.display = "none";
+                document.getElementById("BENZ").style.display = "block";
+                document.getElementById("AUDI").style.display = "none";
+            }
+        }
+         const close=document.getElementById("close");
+         close.onclick=function(){
+             popup.style.display="none";
+         }
+
+         window.addEventListener('click', function(event) {
+    const popup = document.getElementById('popup');
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSc-PBDnJGYr8G75PLNDVN1oT4IY0s7C0&libraries=places"></script>
+</body>
+
+</html>

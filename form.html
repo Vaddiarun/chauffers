@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-image: url(./assets/img/bgimg.png);
+      background-position: center;
+    }
+
+    .mainhead {
+      display: flex;
+      background-color: rgb(37, 39, 41);
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      color: white;
+      margin-bottom: 50px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    .form {
+      background-color: rgb(234, 241, 245);
+      color: rgb(5, 55, 119);
+      width: 35%;
+      border-radius: 10px;
+      height: 100%;
+      padding-top: 17px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 310px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      margin-bottom: 0px;
+    }
+
+    .alert {
+      background-color: aliceblue;
+      color: rgb(248, 51, 51);
+      width: 35%;
+      min-width: 310px;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      line-height: 13px;
+    }
+
+    .form div {
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .normalinput {
+      border-radius: 16px;
+      height: 40px;
+      width: 45%;
+      min-width: 200px;
+      border: 0;
+    }
+
+    div {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+    }
+
+    @media only screen and (max-width: 680px) {
+  .bg1 {
+    background-image: url(./assets/img/newbg1.jpg)!important;
+    background-size:800px 100% !important;
+    background-position: right !important;
+  }
+  .btn :hover{
+    cursor: pointer;
+  }
+  
+    .form  {
+      padding-top:25px;
+    }
+ 
+}
+
+  </style>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Bengaluru chauffeurs</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link href="assets/img/icon.jpeg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: Restaurantly
+  * Updated: Sep 20 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body style="background-size: cover; background-image: url(./assets/img/bgimg.png);" class="bg1">
+  <div style="min-height: 100vh;">
+
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <!-- <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-phone d-flex align-items-center"><span style="color: black;">+91 9035471947</span></i>
+        </div> -->
+        <!-- <div class="languages d-none d-md-flex align-items-center">
+                <ul>
+                  <li>En</li>
+                  <li><a href="#">De</a></li>
+                </ul>
+              </div> -->
+      </div>
+    </div>
+    <!-- ======= Header ======= 
+    <header id="header" class="fixed-top d-flex align-items-cente">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between" id="loho1">
+         <h1 class="logo me-auto me-lg-0"><a href="index.html">Restaurantly</a></h1> 
+         Uncomment below if you prefer to use an image logo 
+        <a href="index.html" class="logo me-auto me-lg-0" style="display: flex; flex-direction: column; gap: 6px;"><img
+            src="assets/img/new1bc.jpeg" style="width: 190px; height: 70px;" alt="" class="img-fluid">
+           <div style="font-weight: 400;">Bengaluru chauffeurs</div> 
+        </a>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+           <ul> 
+                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                  <li><a class="nav-link scrollto" href="#about">Services</a></li>
+                  <li><a class="nav-link scrollto" href="#why-us">Booking</a></li>
+                  <li><a class="nav-link scrollto" href="#specials">About</a></li>
+                  <li><a class="nav-link scrollto" href="#menu">Menu</a></li> -->
+
+
+          <!-- <li><a class="nav-link scrollto" href="#specials">Specials</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#events">Events</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="#">Drop Down 1</a></li>
+                      <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul> -->
+                          <!-- <div id="quick" style="font-size: 30px;">QUICK BOOKING</div> -->
+                       <!--   <li><a href="#">Deep Drop Down 1</a></li>
+                          <li><a href="#">Deep Drop Down 2</a></li>
+                          <li><a href="#">Deep Drop Down 3</a></li>
+                          <li><a href="#">Deep Drop Down 4</a></li>
+                          <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Drop Down 2</a></li>
+                      <li><a href="#">Drop Down 3</a></li>
+                      <li><a href="#">Drop Down 4</a></li>
+                    </ul>
+                  </li> 
+                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav><!-- .navbar -->
+          <!-- <a href="#why-us" class="book-a-table-btn scrollto d-none d-lg-flex">Book a Chauffeur</a> 
+      </div>
+    </header> -->
+
+
+
+    <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+      <form id="form" class="form">
+        <div style="width: 100%; height: 100px; background-image: url(./assets/img/ban.jpeg); background-size: cover; text-align: center;" class="formimg">
+          <div style="display: flex; justify-content: center;width: 100%; font-style: italic; font-weight: 500px; font-size: 30px; color: white;">QUICK BOOKING</div>
+        </div>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+          <div style="width: 40%; min-width: 125px;">
+            <label for="option1">One Way</label>
+            <input type="checkbox" id="option1" name="option" value="oneway" 
+              onchange="check(0)">
+          </div>
+
+          <div style="width: 40%; min-width: 125px;">
+            <label for="option2">Round Trip</label>
+            <input type="checkbox" id="option2" name="option" value="roundtrip" 
+              onchange="check(1)">
+          </div>
+          <div style="width: 40%; min-width: 125px;">
+            <label for="option"> Out Station</label>
+            <input type="checkbox" id="option3" name="option" value="outstation"
+              onchange="check(2)">
+          </div>
+          <div style="width: 40%; min-width: 125px;">
+            <label  for="option">Permanent</label>
+            <input type="checkbox" id="option4" name="option" value="permanent" 
+              onchange="check(3)">
+          </div>
+        </div>
+        <!-- <div style="width: 100%;height: 0px; border: 1px rgb(129, 112, 112) solid;"></div>
+                <div>
+                    <label for="option"> Online</label>
+                    <input type="checkbox" id="option3" name="payoption" value="online" style="width: 15px; height: 15px;" onchange="checkpayment(0)">
+                </div>
+                <div>
+                    <label for="option">By Cash</label>
+                    <input type="checkbox" id="option4" name="payoption" value="bycash" style="width: 15px; height: 15px;" onchange="checkpayment(1)">
+                </div> -->
+        <div style="width: 100%;height: 0px; border: 1px rgb(129, 112, 112) solid;"></div>
+        <div>
+          <label for="name" style="min-width: 120px;">Name</label>
+          <input type="text" id="name" class="normalinput" name="lastname" placeholder="Name">
+        </div>
+        <div>
+          <label for="phone" style="min-width: 120px;">Phone Number</label>
+          <input type="text" id="number" class="normalinput" name="lastname" placeholder="Phone">
+        </div>
+        <div>
+          <div style="display: block;"><label for="pickup" style="min-width: 120px;">Pickup Location</label>
+            <!-- <div style="position: relative; top: 0; right: 0;">
+              <div style="font-size: 13px ;font-weight: 500;font-style: italic;">Current Location</div><input
+                type="checkbox" style="height: 15px; width: 15px; position: absolute; right: 0px; top: 0;"
+                onchange="setpic()">
+            </div> -->
+          </div>
+          <input type="text" id="pickup" class="normalinput" name="lastname" placeholder="Pickup Location">
+        </div>
+        <div>
+          <label for="drop" style="min-width: 120px;">Drop Location</label>
+          <input type="text" id="drop" class="normalinput" name="lastname" placeholder="Drop Location">
+        </div>
+
+        <!-- <div>
+                    <label for="email">Email Id</label>
+                    <input type="text" id="email" name="lastname" placeholder="Email">
+                </div> -->
+        <div>
+          <label for="email" style="min-width: 120px;">Pickup Date</label>
+          <input type="date" id="pdate" class="normalinput" name="lastname">
+        </div>
+        <div>
+          <label for="email" style="min-width: 120px;">Pickup Time</label>
+          <input type="time" id="ptime" class="normalinput" name="lastname">
+        </div>
+        <!-- <div>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message"  style="height: 80px; resize: none; border-radius: 16px; width: 50%; outline: 0;"></textarea>
+                </div> -->
+
+        <div style="display: flex; justify-content: center;">
+          <button
+            style="background-color: rgb(81, 104, 235); padding: 6px; border-radius: 6px; background-color: rgb(112, 184, 233); color: aliceblue;" class="btn"
+            >BOOK NOW</button>
+        </div>
+        <span id="Error" class="error" style="color: red;font-size: 14px;"></span>
+      </form>
+
+      
+
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%; padding-bottom: 20px; margin-top: 25px;">
+    <div class="alert" style="color: rgb(206, 42, 78);background-color: white;text-align: center;padding: 2px;margin: 0px;">
+      <span style="font-weight: bold;">Please Note <br></span>
+      These prices are valid for ten hours , extra hours will cost you 100 rupees per hour.One way drive in the city limits will be 1000 rupees only ,Food and accommodation is included for outstation trips. For Permanent drivers please contact below numbers Mahesh :- +919035471947
+      
+    </div>
+    </div>
+
+
+  </div>
+  <footer id="footer">
+   
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Bengaluru Chauffeur</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer sh ould remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+        Designed by <a href="https://thewebsort.com">Websort</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>         
+   var selectedoption;
+   function check(option) {
+     var checkboxes = document.getElementsByName('option');
+
+     selectedoption = checkboxes[option]
+
+     for (var i = 0; i < checkboxes.length; i++) {
+       if (option != i) {
+         checkboxes[i].checked = false
+       }
+     }
+   }
+
+   var selectedpayment;
+
+   function checkpayment(option) {
+     var checkboxes2 = document.getElementsByName('payoption');
+
+   selectedpayment=checkboxes2[option]
+
+     for (var i = 0; i < checkboxes2.length; i++) {
+       if (option!=i) {
+         checkboxes2[i].checked=false
+       }
+     }
+   }
+
+
+  
+  async function submit() {
+    const name = document.getElementById('name').value
+    var pickup = document.getElementById('pickup').value
+    const drop = document.getElementById('drop').value
+    const number = document.getElementById('number').value
+    //   const email = document.getElementById('email').value
+    //   const message = document.getElementById('message').value
+    const Pickupdate = document.getElementById('pdate').value
+    const Pickuptime = document.getElementById('ptime').value
+    const Error =  document.getElementById('Error')
+
+
+    // pickup == "" ||
+
+    if (name == "" ||  drop == "" || number == "" || selectedoption == null || Pickupdate == null || Pickuptime == null) {
+
+      // alert("Please fill all the fields")
+      Error.innerText="Please fill all the fields"
+    } else {
+
+      const namec = /^[A-Za-z - .,]+$/
+      // const emailc = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+      const phonec = /^1*\s*[0-9]{3}-*\s*[0-9]{3}-*\s*[0-9]{4}$|^1*\s*[(][0-9]{3}[)]-*\s*[0-9]{3}-*\s*[0-9]{4}$/
+
+      if (!namec.test(name)) {
+        console.log('name');
+        Error.innerText="Please add a valid name"
+        return
+      }
+      if (!phonec.test(number)) {
+        console.log('number');
+        Error.innerText="Please add a valid Number"
+        return
+      }
+
+      if (!namec.test(pickup)) {
+        console.log('pickup');
+        Error.innerText="Please add a valid Pickup place"
+        return
+      }
+      if (!namec.test(drop)) {
+        console.log('drop');
+        Error.innerText="Please add a valid Drop Place"
+        return
+      }
+
+      const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var amount = parseInt(urlParams.get('amount'))*100;
+    if (selectedoption.value==="oneway"){
+      amount=amount+amount*(18/100);
+    }else{
+      amount=amount+amount;
+      amount=amount+amount*(18/100);
+    }
+
+    var response=await fetch(`./order.php?amount=${amount}`)
+    var orderId=await response.text()
+    var rzp1=new Razorpay({
+      key:"rzp_live_yxuBa3QpFAHrFL",
+      amount:amount,
+      orderId:orderId,
+      currency:"INR",
+      
+      handler:function(res){
+        console.log(res);
+        function sendEmail(){
+             (function(){
+              emailjs.init("3BSh4FwmsTyP7ihVo")
+             })();
+             var x=null
+             var l=null
+     
+
+      if (currentlocation!==false) {
+        getLocation()
+      } 
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x = position.coords.latitude
+        l = position.coords.longitude;
+        pickup=null
+
+        // &lat=${x}&long=${l}
+      }
+
+      
+      var params={
+              razorpayPaymentId:res.razorpay_payment_id,
+              drop:document.getElementById("drop").value,
+              pdate:document.getElementById("pdate").value,
+              ptime:document.getElementById("ptime").value,
+              name:document.getElementById("name").value,
+              number:document.getElementById("number").value,
+              amount:amount,
+        }
+        
+             if (pickup){
+                params.pickup= document.getElementById("pickup").value
+             }else{
+                params.pickup="latitude="+x+"&"+"longitude="+l;
+             }
+
+             var serviceId="service_jsnl97n";
+             var templateId="template_im7r0td";
+
+             console.log(params);
+
+             emailjs.send(serviceId,templateId,params).then(res=>{
+              alert("Your Trip has been booked.")
+             })
+         }
+        //  sendEmail() 
+
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby43BeMBjiVjD1-NYIGa3fomYYAoB1ZzmiKkyQ4-kuhV2wRTBNVx2brWMJ7Ycb08zS1fg/exec'
+            const form = document.forms['google-sheet']
+            const formData=new FormData();
+            Object.keys(params).forEach(key=>formData.append(key,params[key]))
+              fetch(scriptURL, { method: 'POST', body: formData})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+
+              // window.location.href = `paynow.html?name=${name}&pickup=https://maps.google.com/?q=${x},${l}&drop=${drop}&phone=${number}&pickdate=${Pickupdate}&picktime=${Pickuptime}&option=${selectedoption.value}&payId=${res.razorpay_payment_id}`
+      },
+      prefill:{
+        email: "chinarayudubellary8@gmail.com",
+        contact:"8688261165"
+      }
+    })
+    rzp1.open();
+    }
+  }
+
+  var currentlocation=false
+    function setpic() {
+      currentlocation=!currentlocation
+      const pickup = document.getElementById('pickup')
+      if (currentlocation===true) {
+        pickup.style.display='none'
+      } else {
+        pickup.style.display='block'
+      }
+    }
+
+
+    function initAutocomplete() {
+    // Create the autocomplete object, restricting the search predictions to geographical location types.
+    navigator.geolocation
+    const autocomplete1 = new google.maps.places.Autocomplete(
+      document.getElementById('drop'),
+      { types: ['geocode'] ,componentRestrictions: { country: "in" },fields:["geometry"]}
+    );
+
+    const autocomplete2 = new google.maps.places.Autocomplete(
+      document.getElementById('pickup'),
+      { types: ['geocode'] ,componentRestrictions: { country: "in" },fields:["geometry"]}
+    );
+
+    // Listen for the event when a place is selected.
+    autocomplete1.addListener('place_changed', onPlaceChanged1);
+    autocomplete1.addListener('place_changed', onPlaceChanged2);
+
+    function onPlaceChanged1() {
+    // Get the selected place from the autocomplete object.
+    const place = autocomplete1.getPlace();
+
+    // You can access various details about the selected place, such as place name, address, etc.
+    console.log(place);
+  }
+
+  function onPlaceChanged2() {
+    // Get the selected place from the autocomplete object.
+    const place = autocomplete2.getPlace();
+    // You can access various details about the selected place, such as place name, address, etc.
+    console.log(place);
+  }
+  }
+
+  
+
+  window.onload = function() {
+    initAutocomplete();
+  };
+  
+  var form=document.getElementById("form");
+  form.onsubmit=async function(e){
+    e.preventDefault();
+    submit();
+  }
+
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSc-PBDnJGYr8G75PLNDVN1oT4IY0s7C0&libraries=places"></script>
+
+
+</html>
