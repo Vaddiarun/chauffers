@@ -24,7 +24,6 @@
         .container {
             width: 100%;
             background-image: url("https://edelswiss-limousine.ch/wp-content/uploads/2019/02/chauffeur-service-switzerland-2.jpg");
-            max-width: 500px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -143,7 +142,7 @@
     } */
         .popup {
     position: fixed;
-    width: 75%;
+    min-width: 60%;
  background-color:rgb(53, 52, 52);
   color: rgba(225, 175, 67, 0.833);
     display: flex;
@@ -154,6 +153,7 @@
     align-items: center;
     padding: 10px;
     top: 20%;
+    left: 20%;
     align-self: center;
 
 }
@@ -208,12 +208,11 @@
     display: flex;
     border-radius: 10px;
     z-index: 10;
-    margin-left:-50px;
+    margin-left: -50px;
     justify-content: center;
     align-items: center;
     padding: 10px;
     top: 20%;
-    left: 14%;
     align-self: center;
 }
   .checkbox-group {
@@ -275,7 +274,11 @@
     border: 1px solid rgba(241, 221, 177, 0.731);
     text-align:start;
 }
-
+@media (min-width:500px) {
+    .TEXT-BOX{
+        height: 120px;
+    }
+}
 .text{
     font-size:  12px;
     margin: 8px;
@@ -286,6 +289,10 @@
     .popup{
         width: 50%;
     }
+    .TEXT-BOX{
+    height: 135px;
+    padding: 5px;
+}
        
 }
 .close {
@@ -403,7 +410,7 @@
     </form>
 
     </div>
-        <div id="popup" style="display:block;" class="popup">
+        <div id="popup" style="display:none;" class="popup">
             
             <button class="close" id="close">&times;</button>
         <div class="popup-items">
