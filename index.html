@@ -190,31 +190,108 @@
     </section><!-- End Why Us Section -->
 
 
-
-<section id="cars" class="why-us">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Bengaluru Chauffeur  Car's Pricing</h2>
-      <p>"Your one stop solution for Car's </p>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-          <!-- <h4>Lorem Ipsum</h4> -->
-          <p>We offer professional driving services and cater to your every need whether big or small in and around
-            bangalore city.
-            Our top priority is to ensure a smooth and stress free commute through bangalore's hectic traffic. </p>
-          <br>
-          <button value="2000" onclick="bookcar()"
-            style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
-            Now</button>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section><!-- End cars Section -->
-
+        <section id="cars" class="why-us">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <h2>Bengaluru Chauffeur cars Booking</h2>
+              <p>"Your one stop solution for cars" </p>
+            </div>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100" >
+                  
+                  <span>Mercedes BENZ</span>
+                  <span>S Class 350 (Sedan3+1)</span>
+                  <!-- <h4>Lorem Ipsum</h4> -->
+                  <button value="2000" onclick="navigatetocar(1)"
+                    style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                    Now</button>
+                    
+                </div>
+              </div>
+        
+              <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                 
+                  <span>Mercedes BENZ</span>
+                  <span>E Class (Sedan3+1)
+                  </span>
+                  <!-- <h4>Repellat Nihil</h4> -->
+                  <button onclick="navigatetocar(2)"
+                    style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                    Now</button>
+                    </div>
+              
+              </div>
+        
+              <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                                    <span>Mercedes BENZ</span>
+                  <span>Maybach S600
+                  </span>
+                  <!-- <h4> Ad ad velit qui</h4> -->
+                
+                  <button onclick="navigatetocar(3)"
+                    style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                    Now</button>
+                </div>
+        
+              </div>
+            </div>
+            <div class="row mt-4">
+                          <div class="col-lg-4">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                                    <span>Mercedes BENZ</span>
+                  <span>GLS 350d(SUV 6+1)</span>
+                  <!-- <h4>Lorem Ipsum</h4> -->
+  
+                  <button value="2000" onclick="navigatetocar(4)"
+                    style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                    Now</button>
+                </div>
+              </div>
+        
+              <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                  <span>AUDI</span>
+                  <span>
+                    A5 convertible(Sedan3+1)
+                  </span>
+                  <!-- <h4>Repellat Nihil</h4> -->
+          <button onclick="navigatetocar(5)"
+                    style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                    Now</button>
+                </div>
+              </div>
+        
+              <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                  <span>BMW</span>
+                  <span>BMW 730dl(Sedan 4+1)
+                  </span>
+                  <!-- <h4> Ad ad velit qui</h4> -->
+                  <button onclick="navigatetocar(6)"
+                    style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                    Now</button>
+                </div>
+        
+              </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-lg-4">
+                  <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <span>BMW</span>
+                    <span>X5 (SUV 4+1)</span>
+                    <!-- <h4>Lorem Ipsum</h4> -->
+                    <button value="2000" onclick="navigatetocar(7)"
+                      style="color:white;margin-top:5px;border-radius:20px!important;background-color: rgba(189, 168, 74, 0.909);padding:10px;">Book
+                      Now</button>
+                  </div>
+                </div>
+                </div>
+              </div>
+          </div>
+        </section>
    
 
     <!-- ======= Specials Section ======= -->
@@ -882,6 +959,10 @@
     }
     const driver=()=>{
        window.location.href = `Registration.html`;
+    }
+
+    const navigatetocar=(value)=>{
+      window.location.href=`bookacar.html?amount=${value}`
     }
   </script>
 

@@ -6,33 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Request Form</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-            background-image: url("https://luxury-chauffeur-service.com/wp-content/uploads/2022/10/1381550432-1536x1024.jpg");
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1d1c1c; 
-        }
         .text-coloring{
     color: rgb(72, 25, 25);
 }
+body{
+    padding: 0;
+}
+.maincont{
+    display: flex;
+    flex-direction: column;
+            min-height: 100vh;
+        background-color:rgb(234, 241, 245);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            max-width: 100vw;
+}
 
-        .container {
-            width: 100%;
-            background-image: url("https://edelswiss-limousine.ch/wp-content/uploads/2019/02/chauffeur-service-switzerland-2.jpg");
+        .container1 {
+            max-width: 100%;
+      color: rgb(5, 55, 119);
             display: flex;
+            background-size: cover;
             flex-direction: column;
-            align-items: flex-start;
+            align-items:center;
             color: #cda45e;
             background-size:0%;
             padding: 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
         }
+        .money{
+        height: auto;
+        max-width: 100%;
+        padding: 20px;
+                    display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+        }
+        @media (min-width: 768px) {
+    .maincont{
+        flex-direction: row;
+        gap: 20px;
+    }
+    .container1{
+        min-width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: red;
+
+    }
+    .money{
+        max-width: 50%;
+    }
+    
+}
+@media (min-width:1200px) {
+    .money{
+        padding-left:100px ;
+    }
+}
 
         .button-group {
             display: flex;
@@ -56,7 +94,7 @@
         .button-group button.active {
             background-color: transparent;
             border-bottom: 2px solid #20e73b;
-            color: #fff;
+            color: rgb(15, 1, 1);
         }
 
         .button-group button:hover:not(.active) {
@@ -126,44 +164,13 @@
         .hidden {
             display: none;
         }
-        /* .popup {
-      display: flex;
-      
-      width: 100%;
-      height: fit-content;
-      justify-content: center;
-      align-items: center;
-      font-size: 3em;
-      color: white;
-      margin-bottom: 50px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      text-align: center;
-    } */
-        .popup {
-    position: fixed;
-    min-width: 60%;
- background-color:rgb(53, 52, 52);
-  color: rgba(225, 175, 67, 0.833);
-    display: flex;
-    border-radius: 10px;
-    z-index: 10;
-    margin-left:-100px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    top: 20%;
-    left: 20%;
-    align-self: center;
-
-}
 .flexingcardsinsideopoup{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    
+    flex-wrap: wrap;
 }
 .popup-items{
     display: flex;
@@ -182,7 +189,7 @@
 .alineitems{
     
     color: white;
-    margin-top: 5px;
+    margin-top: 25px;
     border-radius: 20px !important;
     background-color: rgba(189, 168, 74, 0.909);
     padding: 10px;
@@ -193,28 +200,21 @@
 }
 .TEXT-BOX{
     width: 160px;
-    height: 100px;
+    height: 120px;
     margin-right: 10px;
-    border: 1px solid rgba(241, 221, 177, 0.731);
+    border: 5px solid rgba(193, 127, 22, 0.731);
     text-align:start;
+    margin-top: 20px;
 }
 
-@media(max-width:769px){
-    .popup {
-    position: fixed;
-    width: 76%;
- background-color:rgb(53, 52, 52);
-  color: rgba(225, 175, 67, 0.833);
-    display: flex;
-    border-radius: 10px;
-    z-index: 10;
-    margin-left: -50px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    top: 20%;
-    align-self: center;
-}
+ .form-group input,
+        .form-group select {
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+        }
   .checkbox-group {
             display: flex;
             align-items: center;
@@ -260,46 +260,12 @@
             background-color: #007bff;
             color: #fff;
         }
-.popup-items{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
-.TEXT-BOX{
-    width: 150px;
-    height: 130px;
-    margin-right: 10px;
-    border: 1px solid rgba(241, 221, 177, 0.731);
-    text-align:start;
-}
-@media (min-width:500px) {
-    .TEXT-BOX{
-        height: 120px;
-    }
-}
-.text{
-    font-size:  12px;
-    margin: 8px;
-}
-}
- 
-@media (min-width: 768px) {
-    .popup{
-        width: 50%;
-    }
-    .TEXT-BOX{
-    height: 135px;
-    padding: 5px;
-}
-       
-}
-.close {
-    float: right;
-    font-size: 20px;
-    cursor: pointer;
-}
+        .car{
+            color: #cda45e;
+        }
+
+
+
 
     </style>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -310,9 +276,7 @@
 
 <body>
     <div class="maincont">
-
-   
-<div class="container">
+     <div class="container1">
 
     <div class="button-group">
             <button value="oneway" id="one-way-btn" class="active">One Way</button>
@@ -324,17 +288,17 @@
 
         <!-- One Way Form -->
         <div class="form-group" id="one-way-form">
-            <label for="drop" style="margin-top:10px;    color: #cda45e;;">Name</label>
+            <label for="drop" style="margin-top:10px;     color: rgb(5, 55, 119);;;">Name</label>
             <input type="text" id="name"  placeholder="Enter your name" 
                 name="name">
-                <label for="drop" style="margin-top:10px;    color: #cda45e;;">Number</label>
+                <label for="drop" style="margin-top:10px;     color: rgb(5, 55, 119);;;">Number</label>
                 <input type="tel" id="phone" placeholder="Enter 4 letters Number" 
                     name="phone">
-            <h2 style="   color: #cda45e; margin-bottom: 13px; margin-top: 12px;"  >Choose Location</h2>
-            <label for="pickup"style="   color: #cda45e;;" >Pickup Location</label>
+            <h2 style="   color: rgb(5, 55, 119); margin-bottom: 13px; margin-top: 12px;"  >Choose Location</h2>
+            <label for="pickup"style="    color: rgb(5, 55, 119);;" >Pickup Location</label>
             <input type="text" id="pickup" placeholder="Enter 4 letters to Search Pickup Location"
                 aria-label="Search Pickup Location" name="chooseloactiononwayform" >
-            <label for="drop" style="margin-top:10px;    color: #cda45e;;">Drop Location</label>
+            <label for="drop" style="margin-top:10px;     color: rgb(5, 55, 119);;">Drop Location</label>
             <input type="text" id="drop" placeholder="Enter 4 letters to Search Drop Location"
                 aria-label="Search Drop Location" name="choosedroploactiononwayform">
         </div>
@@ -342,7 +306,7 @@
         <!-- Round Trip Form -->
 
         <div class="form-group no-margin-bottom" id="round-trip-extra">
-            <h2 style="margin-top:10px;color:#cda45e;">Select Package</h2>
+            <h2 style="margin-top:10px; color: rgb(5, 55, 119);">Select Package</h2>
             <select aria-label="Package Hours" id="timing">
                 <option value="" disabled selected>Select Package Hours</option>
                 <option value="2hours">2 Hours</option>
@@ -356,7 +320,7 @@
         <!-- Outstation Form -->
 
         <div class="form-group hidden" id="outstation-extra">
-            <h2 style="margin-top:10px; color:#cda45e;">Select Trip Type and Estimated Usage</h2>
+            <h2 style="margin-top:10px;  color: rgb(5, 55, 119);">Select Trip Type and Estimated Usage</h2>
             <select aria-label="Trip Type" style="margin-bottom:12px;" id="outs">
                 <option value="" disabled selected>Select Trip Type</option>
                 <option value="round-trip">Round Trip</option>
@@ -365,41 +329,15 @@
         </div>
 
         <div class="form-group">
-                        <label for="date-time" style="margin-top:10px; color:#cda45e;">Select Date & Time</label>
+                        <label for="date-time" style="margin-top:10px; color: rgb(5, 55, 119);">Select Date & Time</label>
                         <input type="datetime-local" id="date-time" aria-label="Date and Time">
         </div>
 
-        <div class="form-group no-margin-bottom">
-            <h2 style="color: #cda45e;" >Car Type</h2>
-            <select aria-label="Car Brand" style="margin-bottom:12px;" id="category">
-                <option value="" disabled selected>Select Company</option>
-                <option value="AUDI">Audi</option>
-                <option value="BMW">BMW</option>
-                <option value="BENZ">Merceds Benz</option>
-            </select>
-
-                        <select aria-label="Car Model Type" style="margin-bottom:12px; display: block;" id="AUDI">
-                            <option value="" disabled selected>Select Model</option>
-                            <option value="A5_convertible_Sedan">A5 convertible(Sedan3+1)</option>
-                            <option value="A5_convertible_Sedan">A5 convertible(Sedan3+1)</option>
-            </select>
-                        <select aria-label="Car Model Type" style="margin-bottom:12px; display:none;" id="BENZ">
-                            <option value="" disabled selected>Select Model</option>
-                            <option value="S_class_350_Sedan">S class 350(Sedan3+1)</option>
-                            <option value="E_class_Sedan">E class(Sedan3+1)</option>
-                            <option value="Maybach_S600">Maybach S600</option>
-                            <option value="GLS_350_SUV">GLS 350(SUV6+1)</option>
-                        </select>
-            <select aria-label="Car Model Type" style="margin-bottom:12px; display: none;" id="BMW">
-                                        <option value="" disabled selected>Select Model</option>
-                                        <option value="X5_SUV">X5 (SUV-4+1)</option>
-                                        <option value="BMW_730dI_SUV">BMW 730dI (SUV-4+1)</option>
-            </select>
-        </div>
+    
 
         <div class="checkbox-group">
             <input type="checkbox" id="protection-plan">
-            <label for="protection-plan">Get Vehicle damage protection plan for your car for ₹15 + GST. T&C
+            <label for="protection-plan" style="color: rgb(5, 55, 119);">Get Vehicle damage protection plan for your car for ₹15 + GST. T&C
                 apply</label>
         </div>
 
@@ -408,31 +346,37 @@
             <span id="Error" class="error" style="color: red;font-size: 14px;"></span>
         </div>
     </form>
-
-    </div>
-        <div id="popup" style="display:none;" class="popup">
-            
-            <button class="close" id="close">&times;</button>
+      </div>
+        <div id="popup" class="money">
         <div class="popup-items">
-            <p id="base">:10000</p>
-            <p id="before6" style="display: none;">:10000</p>
-            <p id="tax">:10000</p>
-            <p id="total">:10000</p>
-            
-        </div>
-        <div class="flexingcardsinsideopoup">
-            <div class="TEXT-BOX">
-                <p id="paraelement" class="text">If the trip extends beyond 1 Hrs, extra charges as extra min applicable</p>
-            </div><div class="TEXT-BOX" >
-                <p id="paraelement2" class="text">If distance between trip start and end location is beyond 15 Kms, ₹7.50 per extra km applicable.</p>
-            </div><div class="TEXT-BOX">
-                <p id="paraelement3" class="text">Night Charge ₹200 on drives ending between 10:00PM & 05:59AM</p>
+            <h1>Pricing details of:</h1>
+            <h1 id="car" class="car" style="line-height: 10px;"></h1>
+            <h2 id="base"></h2>
+            <h2 id="before6" style="display: none;"></h2>
+            <h2 id="tax"></h2>
+            <h2 id="total"></h2>
+            <div class="flexingcardsinsideopoup">
+                 <div class="TEXT-BOX">
+                       <p id="paraelement" class="text">If the trip extends beyond 1 Hrs, extra charges as extra min applicable</p>
+                 </div>
+                 <div class="TEXT-BOX">
+                       <p id="paraelement2" class="text">If distance between trip start and end location is beyond 15 Kms, ₹7.50 per
+                                extra km applicable.</p>
+                 </div>
+                 <div class="TEXT-BOX">
+                        <p id="paraelement3" class="text">Night Charge ₹200 on drives ending between 10:00PM & 05:59AM</p>
+                 </div>
             </div>
         </div>
-        
-           <div class="btn" >
-            <button class="alineitems" onclick="booknow()">Book Now</button>
-           </div>
+        <div style="display: flex; justify-content: center; width: 100%; padding-bottom: 20px; margin-top: 25px;">
+            <div class="alert"
+                style="color: rgb(206, 42, 78);background-color: white;text-align: center;padding: 2px;margin: 0px;">
+                <span style="font-weight: bold;">Please Note <br></span>
+                These prices are valid for eight hours.One way drive in the city
+                limits will be 1000 rupees only ,Food and accommodation is included for outstation trips. For Permanent drivers
+                please contact below numbers Mahesh :- +919035471947
+            </div>
+        </div>
         </div>
         </div>
     <script src="https://smtpjs.com/v3/smtp.js">
@@ -441,37 +385,245 @@
 
      </script>   
     <script>
+                var pricesObject = {
+                        S_class_350_Sedan: {
+                            Basic: 22899,
+                            PerHour: 2200,
+                            PerKm: 220,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1000
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 220,
+                                chargesAfter6am_10Pm: 2000
+                            }
+
+                        }
+                        , E_class_Sedan: {
+                            Basic: 14400,
+                            PerHour: 1000,
+                            PerKm: 120,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1000
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 110,
+                                chargesAfter6am_10Pm: 2000
+                            },
+                        },
+                        Maybach_S600: {
+                            Basic: 60000,
+                            PerHour: 3600,
+                            PerKm: 510,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1000
+
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 510,
+                                chargesAfter6am_10Pm: 2000
+
+                            },
+                        },
+                        GLS_350_SUV: {
+                            Basic: 42000,
+                            PerHour: 2200,
+                            PerKm: 220,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1000,
+
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 220,
+                                chargesAfter6am_10Pm: 2000
+
+                            }
+                        },
+                        A5_convertible_Sedan: {
+                            Basic: 60000,
+                            PerHour: 4800,
+                            PerKm: 480,
+                            chauffer: {
+                                Before_6am: 3000,
+                                After_10pm: 3000,
+
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 600,
+                                chargesAfter6am_10Pm: 3000
+
+                            }
+                        },
+                        X5_SUV: {
+                            Basic: 40800,
+                            PerHour: 2200,
+                            PerKm: 220,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1000,
+
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 220,
+                                chargesAfter6am_10Pm: 2000
+
+                            },
+                        },
+                        BMW_730dI_SUV: {
+                            Basic: 22800,
+                            PerHour: 1900,
+                            PerKm: 180,
+                            chauffer: {
+                                Before_6am: 500,
+                                After_10pm: 1500,
+
+                            },
+                            out_station: {
+                                per_day_KM: 300,
+                                per_KM: 180,
+                                chargesAfter6am_10Pm: 2000
+
+                            },
+                        }
+                    }
+                    var amount=0;
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        var value = parseInt(urlParams.get('amount'));
+        var carModel;
+        var car;
+        switch(value){
+            case 1:
+            console.log("yes");    
+            console.log(pricesObject["S_class_350_Sedan"])
+            carModel=pricesObject["S_class_350_Sedan"];
+            car="S class 350 Sedan"
+                break;
+
+            case  2:
+                carModel = pricesObject["E_class_Sedan"];
+                car= "E class Sedan";
+                break;
+            case 3:
+                carModel=pricesObject["Maybach_S600"];
+                car="Maybach S600"
+                break;
+            case 4:
+                carModel=pricesObject["GLS_350_SUV"];
+                car= "GLS 350 SUV";
+                break;
+            case 5:
+                carModel=pricesObject["A5_convertible_Sedan"];
+                car= "A5 convertible Sedan";
+                break;
+            case 6:
+                carModel=pricesObject["BMW_730dI_SUV"];
+                car="BMW 730dI SUV"
+                break;
+            case 7:
+                carModel=pricesObject["X5_SUV"];
+                car= "X5 SUV";
+                break;  
+            default:
+                break;                          
+        }
+        var base_amount = carModel.Basic;
+        var car1=document.getElementById("car");
+        car1.textContent=car;
+
+        const total = document.getElementById("total")
+        function checkPrices(){
+            if (selectedType === "round") {
+                base_amount = carModel.Basic * 2;
+            } else if (selectedType === "outstation") {
+                const item = document.getElementById("outs").value;
+                if (item === "round-trip") {
+                    base_amount = carModel.Basic * 2;
+                }else{
+                    base_amount=carModel.Basic;
+                }
+            }else{
+                base_amount = carModel.Basic;
+            }
+            displayprices()
+        }
+
+        const item = document.getElementById("outs");
+        item.onchange=()=>{
+            checkPrices()
+        }
+        var is_before_6=false;
+
+        var date_time = document.getElementById("date-time");
+        date_time.onchange=()=>{
+            const time = date_time.value.split("T");
+            const hour = parseInt(time[1].split(":")[0]);
+            const before6 = document.getElementById("before6")
+
+            if(hour < 6) {
+                before6.textContent = "Before 6am Charges :" + carModel.chauffer.Before_6am;
+                before6.style.display = "block";
+                is_before_6=true;
+                displayprices();
+            }
+        }
+
+        function displayprices(val){
+
+            const base = document.getElementById("base")
+            const paraelement = document.getElementById("paraelement")
+            const paraelement2 = document.getElementById("paraelement2")
+            const paraelement3 = document.getElementById("paraelement3")
+            const tax = document.getElementById("tax")
+            const total=document.getElementById("total")
+            amount =(is_before_6?carModel.chauffer.Before_6am:0)+base_amount+ base_amount * (18 / 100);
+            base.textContent = "Base Price : " + base_amount;
+            tax.textContent = "Tax&GST : " + base_amount * (18 / 100);
+            total.textContent = "Total Payable : " + (amount);
+            paraelement.textContent = "If the trip extends beyond 1 Hr min extra charge of " + carModel.PerHour + " RS applicable"
+            paraelement2.textContent = "If the distance between trip pickup and drop location is beyond the given range " + carModel.PerKm + " RS per extra km applicable."
+            paraelement3.textContent = " Booking before  6pm RS " + carModel.chauffer.Before_6am +  " and after 10Pm Rs " + carModel.chauffer.After_10pm+" extra applicable.."
+        }
+        displayprices();
+
         document.getElementById('one-way-btn').addEventListener('click', function () {
                 document.getElementById('outstation-extra').classList.add('hidden');
                 setActiveButton(this);
                 console.log("yes")
             });
 
-            document.getElementById('round-trip-btn').addEventListener('click', function () {
+        document.getElementById('round-trip-btn').addEventListener('click', function () {
                 document.getElementById('outstation-extra').classList.add('hidden');
                 setActiveButton(this);
                 console.log("Yes")
             });
 
-            document.getElementById('outstation-btn').addEventListener('click', function () {
+        document.getElementById('outstation-btn').addEventListener('click', function () {
                 document.getElementById('outstation-extra').classList.remove('hidden');
                 setActiveButton(this);
             });
-           var selectedType="oneway";
-            function setActiveButton(button) {
+        var selectedType="oneway";
+        function setActiveButton(button) {
                 const buttons = document.querySelectorAll('.button-group button');
                 buttons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 selectedType=button.value;
                 console.log(selectedType)
-            }
+                checkPrices();
+        }
 
             // Initialize the form with "One Way" selected
   
-
-        var pricesObject;
-        var carModel;
-        var amount;
         const submit = async () => {
             var pickup = document.getElementById('pickup').value
             const drop = document.getElementById('drop').value
@@ -481,23 +633,15 @@
             const Error = document.getElementById('Error')
             const packageTime=document.getElementById("timing").value
                             // pickup == "" ||
-            const carBrand=document.getElementById("category").value;
-            if (carBrand==="AUDI"){
-                carModel=document.getElementById("AUDI").value;
-            }else if(carBrand==="BENZ"){
-                carModel=document.getElementById("BENZ").value;
-            }else{
-                 carModel=document.getElementById("BMW").value;
-            }
-
-            if (drop == "" || Pickupdateandtime == null || pickup == "" || carBrand===null || carModel===null || packageTime===null) {
-
-                                // alert("Please fill all the fields")
-                // Error.innerText = "Please fill all the fields"
+            const name=document.getElementById("name").value;
+            const number=document.getElementById("phone").value;
+            if (drop == "" || Pickupdateandtime == null || pickup == ""  || packageTime===null || name==="" || number==="") {
+                Error.innerText = "Please fill all the fields"
             } 
             else {
                 const namec = /^[A-Za-z - .,]+$/
                 // const emailc = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+                const phonec = /^1*\s*[0-9]{3}-*\s*[0-9]{3}-*\s*[0-9]{4}$|^1*\s*[(][0-9]{3}[)]-*\s*[0-9]{3}-*\s*[0-9]{4}$/
                 if (!namec.test(pickup)) {
                     console.log('pickup');
                     Error.innerText = "Please add a valid Pickup place"
@@ -508,195 +652,56 @@
                     Error.innerText = "Please add a valid Drop Place"
                     return
                 }
+                if (!namec.test(name)) {
+                    Error.innerText = "Please add a valid Name"
+                    return
+                }
+                if (!phonec.test(number)){
+                    Error.innerText = "Please add a valid Phone number"
+                    return
+                }
+                Error.innerText="";
+                var response = await fetch(`./order.php?amount=${amount * 100}`)
+                var orderId = await response.text()
+                var rzp1 = new Razorpay({
+                    key: "rzp_live_yxuBa3QpFAHrFL",
+                    amount: amount * 100,
+                    orderId: orderId,
+                    currency: "INR",
 
-                pricesObject={
-                        S_class_350_Sedan:{
-                            Basic: 22899,
-                            PerHour: 2200,
-                            PerKm: 220,
-                            chauffer:{
-                              Before_6am:500,
-                              After_10pm:1000
-                            },
-                            out_station:{
-                                per_day_KM:300,
-                                per_KM:220,
-                                chargesAfter6am_10Pm: 2000
-                            }
-
+                    handler: function (res) {
+                        console.log(res);
+                        var params = {
+                            razorpayPaymentId: res.razorpay_payment_id,
+                            name: document.getElementById("name").value,
+                            phone: document.getElementById("phone").value,
+                            drop: document.getElementById("drop").value,
+                            pdate: document.getElementById("pdate").value,
+                            ptime: document.getElementById("ptime").value,
+                            pickup: document.getElementById("pickup").value,
+                            amount: amount,
                         }
-                        ,E_class_Sedan:{
-                             Basic:14400,
-                            PerHour:1000,
-                            PerKm: 120,
-                            chauffer: {
-                                Before_6am: 500,
-                                After_10pm: 1000
-                            },
-                            out_station: {
-                                per_day_KM: 300,
-                                per_KM: 110,
-                                chargesAfter6am_10Pm:2000
-                            },},
-                            Maybach_S600:{
-                                 Basic:60000,
-                                PerHour:3600,
-                                PerKm: 510,
-                                chauffer: {
-                                    Before_6am: 500,
-                                    After_10pm: 1000
-    
-                                },
-                                out_station: {
-                                    per_day_KM: 300,
-                                    per_KM: 510,
-                                    chargesAfter6am_10Pm: 2000
 
-                            },},
-                            GLS_350_SUV:{
-                                 Basic:42000,
-                                PerHour: 2200,
-                                PerKm: 220,
-                                chauffer: {
-                                    Before_6am: 500,
-                                    After_10pm: 1000,
-                                   
-                                },
-                                out_station: {
-                                    per_day_KM: 300,
-                                    per_KM: 220,
-                                    chargesAfter6am_10Pm: 2000
-
-                            }},
-                A5_convertible_Sedan:{
-                    Basic:60000,
-                    PerHour: 4800,
-                    PerKm: 480,
-                    chauffer: {
-                        Before_6am: 3000,
-                        After_10pm: 3000,
-
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbxB5H4gJleFcJ45ES9c9uzovlaJZ0-GV32qNDRD2lckW5oqixKl2C5lHsjEY5o3GnabLA/exec'
+                        const form = document.forms['google-sheet']
+                        const formData = new FormData();
+                        Object.keys(params).forEach(key => formData.append(key, params[key]))
+                        fetch(scriptURL, { method: 'POST', body: formData })
+                            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                            .catch(error => console.error('Error!', error.message))
                     },
-                    out_station: {
-                        per_day_KM: 300,
-                        per_KM: 600,
-                        chargesAfter6am_10Pm: 3000
-
-                }
-            },    
-                X5_SUV:{
-                     Basic:40800,
-                    PerHour:2200,
-                    PerKm: 220,
-                    chauffer: {
-                        Before_6am: 500,
-                        After_10pm: 1000,
-
-                    },
-                    out_station: {
-                        per_day_KM: 300,
-                        per_KM: 220,
-                        chargesAfter6am_10Pm: 2000
-
-                    },
-                },
-                BMW_730dI_SUV:{
-                         Basic: 22800,
-                        PerHour: 1900,
-                        PerKm: 180,
-                        chauffer: {
-                            Before_6am: 500,
-                            After_10pm: 1500,
-
-                        },
-                        out_station: {
-                            per_day_KM: 300,
-                            per_KM: 180,
-                            chargesAfter6am_10Pm: 2000
-
-                        },
+                    prefill: {
+                        email: "chinarayudubellary8@gmail.com",
+                        contact: "8688261165"
                     }
-                }
+                })
+                rzp1.open();
                 
-                const base=document.getElementById("base")
-                // const extra1 = document.getElementById("extra1")
-                // const extrakm = document.getElementById("extrakm")
-                // const after10 = document.getElementById("after10")
-                const before6 = document.getElementById("before6")
-                const popup=document.getElementById("popup")
-                const paraelement=document.getElementById("paraelement")
-                const paraelement2=document.getElementById("paraelement2")
-                const paraelement3=document.getElementById("paraelement3")
-                const tax=document.getElementById("tax")
-                console.log(carModel)
 
-                // // after10.textContent ="After 10Pm Charges :"+ pricesObject[carModel].chauffer.After_10pm;
-
-                let base_amount = pricesObject[carModel].Basic;
-                const date_time = document.getElementById("date-time").value;
-                const time = date_time.split("T")
-                const hour = parseInt(time[1].split(":")[0]);
-                const total=document.getElementById("total")
-                if (selectedType === "round") {
-                base_amount=base_amount*2;
-                }else if(selectedType==="outstation"){
-                    const item=document.getElementById("outs").value;
-                    if (item==="round-trip"){
-                        base_amount=base_amount*2;
-                    }
-                }
-                if (hour < 6) {
-                base_amount = base_amount + pricesObject[carModel].chauffer.Before_6am;
-                                before6.textContent = "Before 6am Charges :" + pricesObject[carModel].chauffer.Before_6am;
-                before6.style.display = "block";
-                }
-                amount=base_amount+base_amount*(18/100);
-                base.textContent = "Base Price : " + base_amount;
-                tax.textContent="Tax&GST : "+base_amount*(18/100);
-                total.textContent="Total Payable : "+(base_amount+base_amount*(18/100));
-                paraelement.textContent="If the trip extends beyond 1 Hrs, extra charges as:"+ pricesObject[carModel].PerHour+" extra min applicable"
-                paraelement2.textContent="If distance between trip start and end location is beyond 15 Kms :"+ pricesObject[carModel].PerKm + "per extra km applicable."
-                paraelement3.textContent=" Booking before  6pm RS:" +pricesObject[carModel].chauffer.Before_6am +"and"+"Booking before after 10Pm Rs:"+pricesObject[carModel].chauffer.After_10pm
-                popup.style.display="block";
             }
         }
         // }
         const booknow=async()=>{
-             var response = await fetch(`./order.php?amount=${amount*100}`)
-            var orderId = await response.text()
-            var rzp1 = new Razorpay({
-                key: "rzp_live_yxuBa3QpFAHrFL",
-                amount: amount*100,
-                orderId: orderId,
-                currency: "INR",
-
-                handler: function (res) {
-                    console.log(res);
-                    var params = {
-                        razorpayPaymentId: res.razorpay_payment_id,
-                        name:document.getElementById("name").value,
-                        phone:document.getElementById("phone").value,
-                        drop: document.getElementById("drop").value,
-                        pdate: document.getElementById("pdate").value,
-                        ptime: document.getElementById("ptime").value,
-                        pickup : document.getElementById("pickup").value,
-                        amount: amount,
-                    }
-
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxB5H4gJleFcJ45ES9c9uzovlaJZ0-GV32qNDRD2lckW5oqixKl2C5lHsjEY5o3GnabLA/exec'
-                    const form = document.forms['google-sheet']
-                    const formData = new FormData();
-                    Object.keys(params).forEach(key => formData.append(key, params[key]))
-                    fetch(scriptURL, { method: 'POST', body: formData })
-                        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                        .catch(error => console.error('Error!', error.message))
-                },
-                prefill: {
-                    email: "chinarayudubellary8@gmail.com",
-                    contact: "8688261165"
-                }
-            })
-            rzp1.open();
         }
 
         function initAutocomplete() {
@@ -734,36 +739,7 @@
         window.onload = function () {
             initAutocomplete();
         };
-       
 
-        const category=document.getElementById("category");
-        category.onchange=function(e){
-            console.log(e.target.value)
-            if (e.target.value==="BMW"){
-                document.getElementById("BMW").style.display = "block";
-                document.getElementById("BENZ").style.display = "none";
-                document.getElementById("AUDI").style.display="none";
-            }else if(e.target.value==="AUDI"){
-                document.getElementById("BMW").style.display = "none";
-                document.getElementById("BENZ").style.display = "none";
-                document.getElementById("AUDI").style.display = "block";
-            }else{
-                document.getElementById("BMW").style.display = "none";
-                document.getElementById("BENZ").style.display = "block";
-                document.getElementById("AUDI").style.display = "none";
-            }
-        }
-         const close=document.getElementById("close");
-         close.onclick=function(){
-             popup.style.display="none";
-         }
-
-         window.addEventListener('click', function(event) {
-    const popup = document.getElementById('popup');
-    if (event.target === popup) {
-        popup.style.display = 'none';
-    }
-});
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSc-PBDnJGYr8G75PLNDVN1oT4IY0s7C0&libraries=places"></script>
